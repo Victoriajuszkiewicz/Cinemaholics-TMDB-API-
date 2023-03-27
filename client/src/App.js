@@ -1,10 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
+import React, { useEffect, useState } from "react";
+import NavBar from "./components/NavBar";
+import Homepage from "./Pages/Homepage/Homepage.js";
 
 function App() {
   return (
     <div className="App">
-      <h1>This is app.js</h1>
+      <NavBar />
+      <Homepage />
     </div>
   );
 }
