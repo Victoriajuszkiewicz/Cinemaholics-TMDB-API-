@@ -1,5 +1,7 @@
 # CINEMAHOLICS (using TMDB API) movie website
 
+project description
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -19,6 +21,8 @@ You may also see any lint errors in the console.
 Run "npm install" in project directory.
 This will install server-related dependencies such as express.
 
+## Run : npm install mysql nodemon dotenv cors
+
 ### API info
 
 - in this project I was using the TMDB database ("https://www.themoviedb.org/")
@@ -34,4 +38,8 @@ API documentation:
 
 (after creating your API key, you can paste it in the fetch sections in the Trending.js, Movies.js and Series.js) for adding the key I created a section in .env file with the following data:
 
-create your .env file
+create your own .env file with API key
+
+## Front end
+
+Explain the project structure: Give an overview of the project's file structure and explain what each file does.
