@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import Homepage from "./Pages/Homepage/Homepage.js";
@@ -14,16 +14,15 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/*" element={<Homepage />} />
-          <Route path="/movies" element={<Movies />} />
-          <Route path="/series" element={<Series />} />
-          <Route path="/trending" element={<Trending />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </BrowserRouter>
+
+      <Routes>
+        <Route path="/*" element={<Homepage />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/series" element={<Series />} />
+        <Route path="/trending" element={<Trending />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </div>
   );
 }

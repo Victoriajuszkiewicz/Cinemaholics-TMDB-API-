@@ -22,30 +22,37 @@ const NavBar = (props) => {
 
         <ul className="dropdown-menu dropdown-menu-dark">
           <li>
-            <a className="dropdown-item">Movies</a>
+            <NavLink to="/movies" className="dropdown-item">
+              Movies
+            </NavLink>
           </li>
-          <li className="dropdown-item" type="button">
-            Series
+          <li>
+            <NavLink to="/series" className="dropdown-item">
+              Series
+            </NavLink>
           </li>
-          <li className="dropdown-item" type="button">
-            Trending
+          <li>
+            <NavLink to="trending" className="dropdown-item">
+              Trending
+            </NavLink>
           </li>
         </ul>
       </div>
-      {/* Logo path = /* */}
-      {/* <NavLink to="/"> */}
-      <img
-        className="logo"
-        src={logo}
-        alt="this is a logo of cinemaholics"
-        style={{ width: 80, height: 50 }}
-        onClick={() => handleLogoClick()}
-      />
-      {/* </NavLink> */}
 
-      <button className="btn btn-secondary">
-        <h2 className="bi bi-person-circle"></h2>
-      </button>
+      <NavLink to="/">
+        <img
+          className="logo"
+          src={logo}
+          alt="this is a logo of cinemaholics"
+          style={{ width: 80, height: 50 }}
+          // onClick={() => handleLogoClick()}
+        />
+      </NavLink>
+      <NavLink to="/login">
+        <button className="btn btn-secondary">
+          <h2 className="bi bi-person-circle"></h2>
+        </button>
+      </NavLink>
     </nav>
   );
 };
