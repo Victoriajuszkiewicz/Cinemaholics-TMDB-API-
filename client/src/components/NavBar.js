@@ -6,7 +6,7 @@ const NavBar = (props) => {
   const handleLogoClick = () => {};
 
   return (
-    <nav className="navbar bg-secondary">
+    <nav className="navbar sticky-top bg-secondary">
       <div className="dropdown">
         <button
           className="btn btn-secondary btn-lg dropdown-toggle"
