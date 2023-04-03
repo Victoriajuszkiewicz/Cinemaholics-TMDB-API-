@@ -50,9 +50,9 @@ const NavBar = (props) => {
         />
       </NavLink>
       <NavLink to="/login">
-        <button className="btn btn-secondary">
-          <h2 className="bi bi-person-circle"></h2>
-        </button>
+        {/* <button className="btn btn-secondary"> */}
+        <h3 className="bi bi-person-circle btn-light" id="loginicon"></h3>
+        {/* </button> */}
       </NavLink>
     </nav>
   );

@@ -1,3 +1,7 @@
 .navbar {
   background-color: rgb(120, 120, 120, 0.5);
 }
+#loginicon {
+  color: white;
+  padding-right: 20px;
+}

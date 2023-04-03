@@ -8,15 +8,15 @@ import SeparateCards from "../../components/SeparateCards.js";
 const Homepage = () => {
   const [page, setPage] = useState(1);
   const [trending, setTrending] = useState([]);
+  //poster is only saved by uncomplete path /1234567876t5r4e
+  const posterURL = `https://image.tmdb.org/t/p/w300/`;
+  const bigposterURL = `https://image.tmdb.org/t/p/original/`;
 
-  //this part needs to be fixed, why does it not read env file?????
-  let REACT_APP_API_KEY = "478603fe0dca8af9e15ac989cbcf68ee";
-
-  // fetch data from API
+  // fetching data from API (trending only)
   const fetchTrending = async () => {
     //we will get everything in form of a data variable
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/trending/all/week?api_key=${REACT_APP_API_KEY}&page=${page}`
+      `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
     );
     console.log(data);
     setTrending(data.results);
@@ -26,9 +26,6 @@ const Homepage = () => {
   useEffect(() => {
     fetchTrending();
   }, [page]);
-  //poster is only saved by uncomplete path /1234567876t5r4e
-  const posterURL = `https://image.tmdb.org/t/p/w300/`;
-  const bigposterURL = `https://image.tmdb.org/t/p/original/`;
 
   return (
     <div>
@@ -51,8 +48,6 @@ const Homepage = () => {
                 </div>
               </div>
             ))}
-
-            <div className="carousel-item"></div>
           </div>
 
           <button

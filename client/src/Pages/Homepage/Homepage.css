@@ -11,11 +11,22 @@
   margin-bottom: 10px;
   background: rgba(61, 60, 59, 0.5);
 }
-
-/* .carousel {
+/* This makes carousel height smaller */
+.carousel-item {
   height: 500px;
 }
 
-.carousel img {
+.carousel-item img {
+  position: absolute;
+  object-fit: cover;
+  top: 0;
+  left: 0;
   min-height: 500px;
-} */
+}
+
+h2 {
+  color: white;
+  text-align: left;
+  padding: 10px;
+  padding-left: 20px;
+}
