@@ -1,0 +1,15 @@
+.alllmoviesgrid {
+  display: grid;
+  gap: 10px;
+  /* text-align: center; */
+  /* padding-left: 170px; */
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 auto;
+  text-align: left;
+  padding: 5px;
+}
+
+.container {
+  background-color: blue;
+  justify-content: center;
+}

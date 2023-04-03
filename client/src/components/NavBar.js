@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../img/logo.png";
+import logo from "../img/logo3.png";
+import "./NavBar.css";
 
 const NavBar = (props) => {
-  const handleLogoClick = () => {};
+  // const handleLogoClick = () => {};
 
   return (
-    <nav className="navbar sticky-top bg-secondary">
+    <nav className="navbar navbar-light sticky-top">
       <div className="dropdown">
         <button
           className="btn btn-secondary btn-lg dropdown-toggle"
@@ -44,7 +45,7 @@ const NavBar = (props) => {
           className="logo"
           src={logo}
           alt="this is a logo of cinemaholics"
-          style={{ width: 80, height: 50 }}
+          style={{ width: 90, height: 60 }}
           // onClick={() => handleLogoClick()}
         />
       </NavLink>
