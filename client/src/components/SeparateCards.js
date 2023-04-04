@@ -10,8 +10,8 @@ const SeparateCards = ({ poster, title, media_type, id }) => {
 
   return (
     <div className="container">
-      <div className="row">
-        <div>
+      <div className="row gy-2 my-2">
+        <div className="col-4">
           <div className="card" style={{ width: "15rem" }} key={id}>
             <img
               className="card-img-top"
@@ -20,8 +20,8 @@ const SeparateCards = ({ poster, title, media_type, id }) => {
             />
             <div className="card-body">
               <p className="card-text">{title}</p>
-              {/* without if statement it's showint tv for tv series which is confusing */}
-              <p>{media_type === "tv" ? "TV Series" : "Movie"}</p>
+              {/* without if statement it's showing tv for tv series which is confusing */}
+              {/* <p>{media_type === "tv" ? "TV Series" : "Movie"}</p> */}
             </div>
           </div>
         </div>

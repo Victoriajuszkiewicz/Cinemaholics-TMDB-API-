@@ -90,28 +90,6 @@ const Homepage = () => {
                 />
               ))}
         </div>
-        {/* {trending &&
-          trending.map((c) => (
-            <SeparateCards
-              id={c.id}
-              poster={c.poster_path}
-              title={c.title || c.name}
-              media_type={c.media_type}
-            />
-          ))} */}
-        {/* <div className="cardthingy">
-          {trending &&
-            trending.slice(0, 20).map((c) => (
-              <div>
-                <img
-                  src={posterURL + c.poster_path}
-                  alt="this is a poster for a movie"
-                ></img>
-                <h2>{c.title}</h2>
-                <p>{c.media_type}</p>
-              </div>
-            ))}
-        </div> */}
       </div>
     </div>
   );
