@@ -75,20 +75,25 @@ const Homepage = () => {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
-        <h2>Top 20 this week</h2>
-        <div className="alllmoviesgrid">
-          {trending &&
-            trending
-              .slice(0, 20)
-              .map((c) => (
-                <SeparateCards
-                  poster={posterURL + c.poster_path}
-                  title={c.title || c.name}
-                  media_type={c.media_type}
-                  id={c.id}
-                  key={c.id}
-                />
+        <div className="container">
+          <h2>Top 20 this week</h2>
+        </div>
+        {/* className="alllmoviesgrid" */}
+        <div className="container">
+          <div className="row gy-3">
+            {trending &&
+              trending.slice(0, 20).map((c) => (
+                <div className="col-12 col-sm-12 col-md-4 col-lg-2">
+                  <SeparateCards
+                    poster={posterURL + c.poster_path}
+                    title={c.title || c.name}
+                    media_type={c.media_type}
+                    id={c.id}
+                    key={c.id}
+                  />
+                </div>
               ))}
+          </div>
         </div>
       </div>
     </div>

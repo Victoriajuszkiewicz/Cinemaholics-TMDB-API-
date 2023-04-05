@@ -26,16 +26,23 @@ const Movies = () => {
 
   return (
     <div>
-      <div className="alllmoviesgrid">
-        {movies &&
-          movies.map((m) => (
-            <SeparateCards
-              poster={posterURL + m.poster_path}
-              title={m.title || m.name}
-              // media_type="movie"
-              id={m.id}
-            />
-          ))}
+      <div className="container">
+        <h2>Movies</h2>
+      </div>
+      <div className="container">
+        <div className="row gy-3">
+          {movies &&
+            movies.map((m) => (
+              <div className="col-12 col-sm-12 col-md-4 col-lg-2">
+                <SeparateCards
+                  poster={posterURL + m.poster_path}
+                  title={m.title || m.name}
+                  // media_type="movie"
+                  id={m.id}
+                />
+              </div>
+            ))}
+        </div>
       </div>
       {numOfPages > 1 && (
         <PaginationComp
