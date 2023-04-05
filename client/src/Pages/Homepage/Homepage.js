@@ -76,13 +76,13 @@ const Homepage = () => {
           </button>
         </div>
         <div className="container">
-          <h2>Top 20 this week</h2>
+          <h2>Trending this week</h2>
         </div>
         {/* className="alllmoviesgrid" */}
         <div className="container">
           <div className="row gy-3">
             {trending &&
-              trending.slice(0, 20).map((c) => (
+              trending.slice(0, 18).map((c) => (
                 <div className="col-12 col-sm-12 col-md-4 col-lg-2">
                   <SeparateCards
                     poster={posterURL + c.poster_path}

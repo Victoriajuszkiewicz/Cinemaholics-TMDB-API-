@@ -32,11 +32,11 @@ const NavBar = (props) => {
               Series
             </NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="trending" className="dropdown-item">
               Trending
             </NavLink>
-          </li>
+          </li> */}
         </ul>
       </div>
 
