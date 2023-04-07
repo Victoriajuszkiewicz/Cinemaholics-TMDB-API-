@@ -9,17 +9,17 @@ const NavBar = (props) => {
   return (
     <nav className="navbar navbar-light sticky-top">
       <div className="dropdown">
-        <button
-          className="btn btn-secondary btn-lg dropdown-toggle"
+        {/* //id is to connect button with dropdown items */}
+
+        <i
+          className="bi bi-list btn-lg dropdown-toggle"
+          style={{ color: "white", paddingLeft: 10 }}
           type="button"
-          //id is to connect button with dropdown items
           id="menu-dropdown"
           data-bs-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
-        >
-          <i className="bi bi-list"></i>
-        </button>
+        ></i>
 
         <ul className="dropdown-menu dropdown-menu-dark">
           <li>
