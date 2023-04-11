@@ -20,7 +20,7 @@ function App() {
 	//BACKEND ROUTES
 	//GET all registered users
 	useEffect(() => {
-		fetch("http://localhost:5000/api/register")
+		fetch("/register")
 			.then((res) => res.json())
 			.then((json) => {
 				setAllRegistered(json);
@@ -43,9 +43,7 @@ function App() {
 
 		try {
 			let response = await fetch(
-				// error says localhost3000 not found!!!!
-				// "/api/register",
-				"http://localhost:5000/api/register",
+				"/api/register",
 				options
 			);
 			if (response.ok) {
