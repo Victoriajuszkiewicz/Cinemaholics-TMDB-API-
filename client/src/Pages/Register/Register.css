@@ -1,0 +1,15 @@
+label {
+  color: white;
+}
+
+#welcomemessage {
+  color: white;
+}
+.form-group {
+  /* width: 50%; */
+  text-align: left;
+  justify-content: center;
+}
+/* .formcontainer {
+  justify-content: center;
+} */

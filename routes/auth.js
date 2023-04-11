@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs"); // run npm install bcryptjs in client and se
 const { BCRYPT_WORK_FACTOR, SECRET_KEY } = require("../config");
 const jwt = require("jsonwebtoken"); // run  npm install jwt in server
 
-/* POST new user added to DB*/
+/* POST new user added to DB works for postman /auth/register*/
 router.post("/register", async (req, res) => {
   let { name, password, email } = req.body;
 
@@ -27,14 +27,13 @@ router.post("/register", async (req, res) => {
   }
 });
 
-//POST- log in user
+//POST- log in user ( for POSTMAN /auth/login)
 
 router.post("/login", async (req, res) => {
   let { emailLogin, passwordLogin } = req.body;
 
   try {
     let results = await db(`SELECT * FROM users WHERE email = '${emailLogin}'`);
-
     if (results.data.length === 0) {
       //email not found
       res.status(401).send({ error: "Login failed" });

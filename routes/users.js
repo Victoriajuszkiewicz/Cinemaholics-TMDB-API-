@@ -20,7 +20,7 @@ router.get("/register", async function (req, res, next) {
     res.status(500).send({ error: err.message });
   }
 });
-//GET USER BY ID (postam says unauthorised)
+//GET USER BY ID (postman says unauthorised)
 router.get("/:id", ensureSameUser, async function (req, res, next) {
   let { id } = req.params;
   let sql = "SELECT * FROM USERS where id = " + id;

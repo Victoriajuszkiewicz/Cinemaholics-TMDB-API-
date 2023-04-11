@@ -1,35 +1,38 @@
 .carousel {
-  padding-bottom: 0;
-  margin-bottom: 0;
-  /* margin-top: 100px; */
-  width: 100%;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	/* margin-top: 100px; */
+	width: 100%;
 }
 .carousel-caption {
-  text-align: left;
-  padding: 8px;
-  margin-left: 0;
-  margin-bottom: 10px;
-  background: rgba(61, 60, 59, 0.5);
+	text-align: left;
+	padding: 8px;
+	margin-left: 0;
+	margin-bottom: 10px;
+	background: rgba(61, 60, 59, 0.5);
 }
 /* This makes carousel height smaller */
 .carousel-item {
-  height: 500px;
+	height: 500px;
 }
 
 .carousel-item img {
-  position: absolute;
-  object-fit: cover;
-  top: 0;
-  left: 0;
-  min-height: 500px;
+	position: absolute;
+	object-fit: cover;
+	top: 0;
+	left: 0;
+	min-height: 500px;
 }
 
 h2 {
-  color: white;
-  text-align: left;
-  font-size: 20px;
-  padding-top: 10px;
+	color: white;
+	text-align: left;
+	font-size: 20px;
+	padding-top: 10px;
 }
 .container {
-  padding-bottom: 10px;
+	padding-bottom: 10px;
+}
+.carouseltitle {
+	font-size: 30px;
 }
