@@ -29,37 +29,52 @@ const Login = (props) => {
 	return (
 		<div>
 			<button onClick={(m) => navigate("/register")}>Register</button>
-			<h1 id="welcomemessage">Welcome back!</h1>
-			<form onSubmit={handleSubmit}>
-				<div className="form-group">
-					<label for="exampleInputEmail1">Email</label>
-					<input
-						id="email"
-						type="email"
-						placeholder="nugget@example.com"
-						name="emailLogin"
-						value={loginInput.emailLogin}
-						onChange={handleChange}
-						required
-					></input>
-				</div>
-				<div className="form-group">
-					<label for="exampleInputPassword">Password</label>
-					<input
-						id="password"
-						type="password"
-						name="passwordLogin"
-						placeholder="your password..."
-						value={loginInput.passwordLogin}
-						label="Password"
-						onChange={handleChange}
-						required
-					></input>
-				</div>
-				<button variant="secondary" type="submit" className="btn btn-secondary">
-					Log in
-				</button>
-			</form>
+
+			<div className="container">
+				<h1 id="welcomemessage">Welcome back!</h1>
+				<form onSubmit={handleSubmit}>
+					<div className="form-group">
+						<div className="row  justify-content-center">
+							<div className="col-sm-3">
+								<label for="exampleInputEmail1">Email</label>
+
+								<input
+									className="form-control"
+									id="email"
+									type="email"
+									placeholder="nugget@example.com"
+									name="emailLogin"
+									value={loginInput.emailLogin}
+									onChange={handleChange}
+									required
+								></input>
+							</div>
+						</div>
+					</div>
+					<div className="form-group">
+						<div className="row  justify-content-center">
+							<div className="col-sm-3">
+								<label for="exampleInputPassword">Password</label>
+								<input
+									className="form-control"
+									id="password"
+									type="password"
+									name="passwordLogin"
+									placeholder="your password..."
+									value={loginInput.passwordLogin}
+									label="Password"
+									onChange={handleChange}
+									required
+								></input>
+							</div>
+						</div>
+					</div>
+					<button variant="secondary" type="submit" className="btn btn-danger"
+					id="buttonlogin">
+						Log in
+					</button>
+				</form>
+			</div>
 		</div>
 	);
 };

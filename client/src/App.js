@@ -14,13 +14,13 @@ import Register from "./Pages/Register/Register.js";
 
 function App() {
 	const [user, setUser] = useState(Local.getUser());
-	const [loginErrorMsg, setLoginErrorMsg] = useState([]);
+	const [loginErrorMsg, setLoginErrorMsg] = useState("");
 	let [allRegistered, setAllRegistered] = useState([]);
 	const navigate = useNavigate();
 	//BACKEND ROUTES
-	//GET all registered users WORKS
+	//GET all registered users
 	useEffect(() => {
-		fetch("http://localhost:5000/users/register")
+		fetch("/register")
 			.then((res) => res.json())
 			.then((json) => {
 				setAllRegistered(json);
@@ -31,7 +31,7 @@ function App() {
 			});
 	}, []);
 
-	// POST (add new user to DB)- not tested
+	// POST (add new user to DB)
 	async function addNew(registerForm) {
 		let options = {
 			method: "POST",
@@ -43,8 +43,7 @@ function App() {
 
 		try {
 			let response = await fetch(
-				// error says localhost3000 not found!!!!
-				"http://localhost:5000/auth/register",
+				"/api/register",
 				options
 			);
 			if (response.ok) {
@@ -60,20 +59,21 @@ function App() {
 	async function doLogin(loginObj) {
 		const myresponse = await Api.loginUser(loginObj);
 		console.log("passed to DB");
-		console.log(loginErrorMsg);
+
 		if (myresponse.ok) {
+			console.log("response ok from App.js login route");
 			Local.saveUserInfo(myresponse.data.token, myresponse.data.user);
 			console.log("you are logged in");
 			setUser(myresponse.data.user);
 			// need add line 80 because this will fetch all the fav data when loging in and not showing the one from the previous user
 			// getFav(Local.getUserId());
 			//remember to setloginerrormsg to false, so when loging out the error message won't appear if previously we had the message
-			setLoginErrorMsg(!loginErrorMsg);
+			setLoginErrorMsg("");
 			//after clicking on login, if the action succeed then the user is redirected to the homepage
-			navigate("*");
+			navigate("/");
 		} else {
 			//no need to pass any argument since the default usestate is already set to true
-			setLoginErrorMsg();
+			setLoginErrorMsg("Login failed!");
 		}
 	}
 	// logout
