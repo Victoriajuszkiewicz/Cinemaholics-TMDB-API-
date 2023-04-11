@@ -1,15 +1,12 @@
 label {
-  color: white;
+	color: white;
 }
 
 #welcomemessage {
-  color: white;
+	color: white;
 }
 .form-group {
-  /* width: 50%; */
-  text-align: left;
-  justify-content: center;
+	/* width: 50%; */
+	text-align: left;
+	justify-content: center;
 }
-/* .formcontainer {
-  justify-content: center;
-} */

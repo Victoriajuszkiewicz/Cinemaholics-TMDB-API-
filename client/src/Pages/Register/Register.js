@@ -31,51 +31,63 @@ const Register = (props) => {
 		<div>
 			<button onClick={(m) => navigate("/login")}>Log in</button>
 
-			<div className="container" id="formcontainer">
+			<div className="container">
 				<h1 id="welcomemessage">Welcome to Cinemaholics</h1>
 				<form onSubmit={handleSubmit}>
 					<div className="form-group">
-						<label for="exampleInputName1">Name</label>
-						<input
-							type="text"
-							className="form-control"
-							id="name"
-							// name is needed so registerForm knows where to put input from this field
-							name="name"
-							aria-describedby="emailHelp"
-							placeholder="John"
-							value={registerForm.name}
-							required
-							onChange={handleChange}
-						></input>
+						<div className="row  justify-content-center">
+							<div className="col-sm-3">
+								<label for="exampleInputName1">Name</label>
+								<input
+									type="text"
+									className="form-control"
+									id="name"
+									// name is needed so registerForm knows where to put input from this field
+									name="name"
+									aria-describedby="emailHelp"
+									placeholder="John"
+									value={registerForm.name}
+									required
+									onChange={handleChange}
+								></input>
+							</div>
+						</div>
 					</div>
 					<div className="form-group">
-						<label for="exampleInputEmail1">Email</label>
-						<input
-							type="text"
-							className="form-control"
-							name="email"
-							id="email"
-							aria-describedby="emailHelp"
-							placeholder="Enter email"
-							value={registerForm.email}
-							onChange={handleChange}
-						></input>
+						<div className="row  justify-content-center">
+							<div className="col-sm-3">
+								<label for="exampleInputEmail1">Email</label>
+								<input
+									type="text"
+									className="form-control"
+									name="email"
+									id="email"
+									aria-describedby="emailHelp"
+									placeholder="Enter email"
+									value={registerForm.email}
+									onChange={handleChange}
+								></input>
+							</div>
+						</div>
 					</div>
 					<div className="form-group">
-						<label for="exampleInputPassword1">Password</label>
-						<input
-							type="password"
-							className="form-control"
-							id="exampleInputPassword1"
-							name="password"
-							placeholder="Password"
-							value={registerForm.password}
-							onChange={handleChange}
-						></input>
+						<div className="row  justify-content-center">
+							<div className="col-sm-3">
+								<label for="exampleInputPassword1">Password</label>
+								<input
+									type="password"
+									className="form-control"
+									id="exampleInputPassword1"
+									name="password"
+									placeholder="Password"
+									value={registerForm.password}
+									onChange={handleChange}
+								></input>
+							</div>
+						</div>
 					</div>
 					{/* button needs to have type submit, without it it wont call handlesubmit funtion!!!! */}
-					<button type="submit" className="btn btn-secondary">
+					<button type="submit" className="btn btn-danger" id="buttonlogin">
 						Create an account
 					</button>
 				</form>
