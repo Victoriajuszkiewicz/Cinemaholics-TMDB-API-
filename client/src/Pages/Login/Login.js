@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./Login.css";
 
+// import Switch from "../../components/Switch.js";
+
 const INIT_LOGINFORM = {
 	emailLogin: "",
 	passwordLogin: "",
@@ -12,6 +14,7 @@ const Login = (props) => {
 	const [loginInput, setLoginInput] = useState(INIT_LOGINFORM);
 	const { inputLoginCb, loginError } = props;
 	const navigate = useNavigate();
+	const [isToggled, setIsToggled] = useState(false);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -26,7 +29,28 @@ const Login = (props) => {
 
 	return (
 		<div>
-			<button onClick={(m) => navigate("/register")}>Register</button>
+			{/* <Switch
+				rounded={true}
+				isToggled={isToggled}
+				onToggled={() => setIsToggled(!isToggled)}
+			/> */}
+			<div className="button-box">
+				<div id="btn"></div>
+				<button
+					type="button"
+					className="toggle-btn"
+					onClick={(m) => navigate("/login")}
+				>
+					Log in
+				</button>
+				<button
+					type="button"
+					className="toggle-btn"
+					onClick={(m) => navigate("/register")}
+				>
+					Register
+				</button>
+			</div>
 
 			<div className="container">
 				<h1 id="welcomemessage">Welcome back!</h1>

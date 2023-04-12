@@ -28,8 +28,24 @@ const Register = (props) => {
 
 	return (
 		<div>
-			<button onClick={(m) => navigate("/login")}>Log in</button>
-
+			{/* <button onClick={(m) => navigate("/login")}>Log in</button> */}
+			<div className="button-box">
+				<div id="btn2"></div>
+				<button
+					type="button"
+					className="toggle-btn"
+					onClick={(m) => navigate("/login")}
+				>
+					Log in
+				</button>
+				<button
+					type="button"
+					className="toggle-btn"
+					onClick={(m) => navigate("/register")}
+				>
+					Register
+				</button>
+			</div>
 			<div className="container">
 				<h1 id="welcomemessage">Welcome to Cinemaholics</h1>
 				<form onSubmit={handleSubmit}>

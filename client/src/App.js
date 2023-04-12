@@ -4,6 +4,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import { Local } from "./helpers/Local";
 import { Api } from "./helpers/Api";
 
+import PrivateRoute from "./components/PrivateRoute";
 import NavBar from "./components/NavBar";
 import Homepage from "./Pages/Homepage/Homepage.js";
 import Movies from "./Pages/Movies/Movies.js";
@@ -90,7 +91,15 @@ function App() {
 					element={<Login inputLoginCb={doLogin} loginError={loginErrorMsg} />}
 				/>
 				<Route path="/register" element={<Register addNewCb={addNew} />} />
-				<Route path="/user" element={<User />} />
+
+				<Route
+					path="/user"
+					element={
+						<PrivateRoute>
+							<User />
+						</PrivateRoute>
+					}
+				/>
 			</Routes>
 		</div>
 	);
