@@ -9,7 +9,7 @@ const NavBar = (props) => {
 			<div className="dropdown">
 				{/* //id is to connect button with dropdown items */}
 
-				<i
+				<h3
 					className="bi bi-list btn-lg dropdown-toggle"
 					style={{ color: "white", paddingLeft: 10 }}
 					type="button"
@@ -17,7 +17,7 @@ const NavBar = (props) => {
 					data-bs-toggle="dropdown"
 					aria-haspopup="true"
 					aria-expanded="false"
-				></i>
+				></h3>
 
 				<ul className="dropdown-menu dropdown-menu-dark">
 					<li>
@@ -43,13 +43,13 @@ const NavBar = (props) => {
 			</NavLink>
 			{props.user ? (
 				<div className="dropdown-center">
-					<i
+					<h3
 						className="bi bi-person-circle dropdown-toggle  btn-light"
 						style={{ color: "white", paddingRight: 15 }}
 						type="button"
 						data-bs-toggle="dropdown"
 						aria-expanded="false"
-					></i>
+					></h3>
 					<ul className="dropdown-menu dropdown-menu-end dropdown-menu-start dropdown-menu-dark">
 						<li>
 							<a className="dropdown-item" href="/user">
@@ -69,11 +69,11 @@ const NavBar = (props) => {
 				</div>
 			) : (
 				<NavLink to="/login">
-					<i
+					<h3
 						className="bi bi-person-circle  btn-light"
 						style={{ color: "white", paddingRight: 15 }}
 						type="button"
-					></i>
+					></h3>
 				</NavLink>
 			)}
 		</nav>

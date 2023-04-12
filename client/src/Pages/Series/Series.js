@@ -30,10 +30,10 @@ const Series = () => {
 				<h2>Tv series</h2>
 			</div>
 			<div className="container">
-				<div className="row gy-3">
+				<div className="row justify-content-center align-items-center text-center gy-3">
 					{series &&
 						series.slice(0, 18).map((m) => (
-							<div className="col-12 col-sm-12 col-md-4 col-lg-2">
+							<div className="col-6 col-sm-6 col-md-4 col-lg-2">
 								<SeparateCards
 									poster={posterURL + m.poster_path}
 									title={m.title || m.name}

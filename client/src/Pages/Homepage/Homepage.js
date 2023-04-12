@@ -104,10 +104,10 @@ const Homepage = () => {
 				</div>
 				{/* className="alllmoviesgrid" */}
 				<div className="container">
-					<div className="row ">
+					<div className="row justify-content-center align-items-center text-center">
 						{trending &&
 							trending.slice(0, 18).map((c) => (
-								<div className="col-12 col-sm-12 col-md-4 col-lg-2">
+								<div className="col-6 col-sm-6 col-md-4 col-lg-2">
 									<SeparateCards
 										poster={posterURL + c.poster_path}
 										title={c.title || c.name}
@@ -124,10 +124,10 @@ const Homepage = () => {
 						<h2>Upcoming movies</h2>
 					</div>
 					<div className="container">
-						<div className="row ">
+						<div className="row justify-content-center align-items-center text-center">
 							{upcoming &&
 								upcoming.slice(0, 18).map((u) => (
-									<div className="col-12 col-sm-12 col-md-4 col-lg-2">
+									<div className="col-6 col-sm-6 col-md-4 col-lg-2">
 										<SeparateCards
 											title={u.title || u.name}
 											id={u.id}
@@ -144,10 +144,10 @@ const Homepage = () => {
 						<h2>Popular people</h2>
 					</div>
 					<div className="container">
-						<div className="row ">
+						<div className="row justify-content-center align-items-center text-center">
 							{actors &&
 								actors.slice(0, 18).map((a) => (
-									<div className="col-12 col-sm-12 col-md-4 col-lg-2">
+									<div className="col-6 col-sm-6 col-md-4 col-lg-2">
 										<SeparateCards
 											// title={a.title || a.name}
 											id={a.id}

@@ -48,6 +48,7 @@ function App() {
 				console.log(`Server error: ${response.status}: ${response.statusText}`);
 			}
 		} catch (err) {
+			console.log("error here", err);
 			console.log(`Network error: ${err.message}`);
 		}
 	}

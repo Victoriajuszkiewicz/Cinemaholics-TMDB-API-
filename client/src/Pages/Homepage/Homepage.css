@@ -32,6 +32,8 @@ h2 {
 }
 .container {
 	padding-bottom: 10px;
+	padding-left: 2;
+	padding-right: 2;
 }
 .carouseltitle {
 	font-size: 30px;
