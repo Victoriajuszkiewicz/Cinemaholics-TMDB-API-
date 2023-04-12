@@ -32,7 +32,7 @@ const Homepage = () => {
 		// console.log(data);
 		setUpcoming(data.results);
 	};
-	console.log(upcoming);
+
 	const fetchActors = async () => {
 		//we will get everything in form of a data variable
 		const { data } = await axios.get(
@@ -41,8 +41,6 @@ const Homepage = () => {
 
 		setActors(data.results);
 	};
-
-	console.log(actors);
 
 	// not working until we call the function
 	useEffect(() => {

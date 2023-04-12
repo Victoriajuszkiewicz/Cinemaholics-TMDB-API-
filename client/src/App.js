@@ -8,7 +8,7 @@ import NavBar from "./components/NavBar";
 import Homepage from "./Pages/Homepage/Homepage.js";
 import Movies from "./Pages/Movies/Movies.js";
 import Series from "./Pages/Series/Series.js";
-
+import User from "./Pages/User/User.js";
 import Login from "./Pages/Login/Login.js";
 import Register from "./Pages/Register/Register.js";
 
@@ -38,14 +38,9 @@ function App() {
 			headers: { "Content-type": "application/json" },
 			body: JSON.stringify(registerForm),
 		};
-		console.log(registerForm);
-		console.log("passed to DB");
 
 		try {
-			let response = await fetch(
-				"/api/register",
-				options
-			);
+			let response = await fetch("/api/register", options);
 			if (response.ok) {
 				let data = await response.json();
 			} else {
@@ -70,7 +65,7 @@ function App() {
 			//remember to setloginerrormsg to false, so when loging out the error message won't appear if previously we had the message
 			setLoginErrorMsg("");
 			//after clicking on login, if the action succeed then the user is redirected to the homepage
-			navigate("/");
+			navigate("/user");
 		} else {
 			//no need to pass any argument since the default usestate is already set to true
 			setLoginErrorMsg("Login failed!");
@@ -80,12 +75,11 @@ function App() {
 	function doLogout() {
 		Local.removeUserInfo();
 		setUser(null);
-		// (NavBar will send user to home page)
 	}
 
 	return (
 		<div className="App">
-			<NavBar />
+			<NavBar user={user} doLogout={doLogout} />
 
 			<Routes>
 				<Route path="/" element={<Homepage />} />
@@ -96,6 +90,7 @@ function App() {
 					element={<Login inputLoginCb={doLogin} loginError={loginErrorMsg} />}
 				/>
 				<Route path="/register" element={<Register addNewCb={addNew} />} />
+				<Route path="/user" element={<User />} />
 			</Routes>
 		</div>
 	);

@@ -21,7 +21,6 @@ const Register = (props) => {
 	function handleSubmit(event) {
 		event.preventDefault();
 		props.addNewCb(registerForm);
-		console.log("create an account submited", registerForm);
 		// handleSubmit saves all info in register form
 		setRegisterForm(INIT_REGISTRATION);
 		navigate("/login");

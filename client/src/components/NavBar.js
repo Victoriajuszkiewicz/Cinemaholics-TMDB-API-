@@ -4,58 +4,80 @@ import logo from "../img/logo3.png";
 import "./NavBar.css";
 
 const NavBar = (props) => {
-  // const handleLogoClick = () => {};
+	return (
+		<nav className="navbar navbar-light sticky-top">
+			<div className="dropdown">
+				{/* //id is to connect button with dropdown items */}
 
-  return (
-    <nav className="navbar navbar-light sticky-top">
-      <div className="dropdown">
-        {/* //id is to connect button with dropdown items */}
+				<i
+					className="bi bi-list btn-lg dropdown-toggle"
+					style={{ color: "white", paddingLeft: 10 }}
+					type="button"
+					id="menu-dropdown"
+					data-bs-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false"
+				></i>
 
-        <i
-          className="bi bi-list btn-lg dropdown-toggle"
-          style={{ color: "white", paddingLeft: 10 }}
-          type="button"
-          id="menu-dropdown"
-          data-bs-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        ></i>
+				<ul className="dropdown-menu dropdown-menu-dark">
+					<li>
+						<NavLink to="/movies" className="dropdown-item">
+							Movies
+						</NavLink>
+					</li>
+					<li>
+						<NavLink to="/series" className="dropdown-item">
+							Series
+						</NavLink>
+					</li>
+				</ul>
+			</div>
 
-        <ul className="dropdown-menu dropdown-menu-dark">
-          <li>
-            <NavLink to="/movies" className="dropdown-item">
-              Movies
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/series" className="dropdown-item">
-              Series
-            </NavLink>
-          </li>
-          {/* <li>
-            <NavLink to="trending" className="dropdown-item">
-              Trending
-            </NavLink>
-          </li> */}
-        </ul>
-      </div>
-
-      <NavLink to="/">
-        <img
-          className="logo"
-          src={logo}
-          alt="this is a logo of cinemaholics"
-          style={{ width: 90, height: 60 }}
-          // onClick={() => handleLogoClick()}
-        />
-      </NavLink>
-      <NavLink to="/login">
-        {/* <button className="btn btn-secondary"> */}
-        <h3 className="bi bi-person-circle btn-light" id="loginicon"></h3>
-        {/* </button> */}
-      </NavLink>
-    </nav>
-  );
+			<NavLink to="/">
+				<img
+					className="logo"
+					src={logo}
+					alt="this is a logo of cinemaholics"
+					style={{ width: 90, height: 60 }}
+				/>
+			</NavLink>
+			{props.user ? (
+				<div className="dropdown-center">
+					<i
+						className="bi bi-person-circle dropdown-toggle  btn-light"
+						style={{ color: "white", paddingRight: 15 }}
+						type="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"
+					></i>
+					<ul className="dropdown-menu dropdown-menu-end dropdown-menu-start dropdown-menu-dark">
+						<li>
+							<a className="dropdown-item" href="/user">
+								My account
+							</a>
+						</li>
+						<li>
+							<a
+								className="dropdown-item"
+								onClick={props.doLogout}
+								// href="/login"
+							>
+								Logout
+							</a>
+						</li>
+					</ul>
+				</div>
+			) : (
+				<NavLink to="/login">
+					<i
+						className="bi bi-person-circle  btn-light"
+						style={{ color: "white", paddingRight: 15 }}
+						type="button"
+					></i>
+				</NavLink>
+			)}
+		</nav>
+	);
 };
 
 export default NavBar;

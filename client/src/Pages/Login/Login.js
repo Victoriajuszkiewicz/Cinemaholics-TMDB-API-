@@ -21,8 +21,6 @@ const Login = (props) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		inputLoginCb(loginInput);
-		console.log(loginInput);
-		console.log("This is from handle submit");
 		setLoginInput(INIT_LOGINFORM);
 	};
 
@@ -69,8 +67,12 @@ const Login = (props) => {
 							</div>
 						</div>
 					</div>
-					<button variant="secondary" type="submit" className="btn btn-danger"
-					id="buttonlogin">
+					<button
+						variant="secondary"
+						type="submit"
+						className="btn btn-danger"
+						id="buttonlogin"
+					>
 						Log in
 					</button>
 				</form>
