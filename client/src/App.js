@@ -31,6 +31,7 @@ function App() {
 				console.log(`Server error: ${error.message}`);
 			});
 	}, []);
+	// const id = id;
 
 	// POST (add new user to DB)
 	async function addNew(registerForm) {
@@ -79,6 +80,14 @@ function App() {
 		setUser(null);
 	}
 
+	function handleAvatar(avatarId) {
+		console.log("Avatar clicked", avatarId);
+
+		// pass info about avatar to back end
+		//save info for this user in backend
+		//avatar is assigned to a user
+	}
+
 	return (
 		<div className="App">
 			<NavBar user={user} doLogout={doLogout} />
@@ -97,7 +106,7 @@ function App() {
 					path="/user"
 					element={
 						<PrivateRoute>
-							<User />
+							<User handleAvatar={handleAvatar} />
 						</PrivateRoute>
 					}
 				/>
