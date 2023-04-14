@@ -9,11 +9,8 @@ import av6 from "../../avatars/av6.png";
 import av7 from "../../avatars/av7.png";
 import av8 from "../../avatars/av8.png";
 
-//each avatar should have their own id so it knows which one is clicked?????
-
 const User = (props) => {
 	const { id } = props;
-	console.log(props, id);
 
 	return (
 		<div>
@@ -40,32 +37,32 @@ const User = (props) => {
 				<img
 					src={av4}
 					style={{ width: 100 }}
-					onClick={() => props.handleAvatar(id)}
-					id="av4"
+					onClick={() => props.handleAvatar("av4")}
+					// id="av4"
 				/>
 				<img
 					src={av5}
 					style={{ width: 100 }}
-					onClick={() => props.handleAvatar(id)}
-					id="av5"
+					onClick={() => props.handleAvatar("av5")}
+					// id="av5"
 				/>
 				<img
 					src={av6}
 					style={{ width: 100 }}
-					onClick={props.handleAvatar}
-					id="av6"
+					onClick={() => props.handleAvatar("av6")}
+					// id="av6"
 				/>
 				<img
 					src={av7}
 					style={{ width: 100 }}
-					onClick={props.handleAvatar}
-					id="av7"
+					onClick={() => props.handleAvatar("av7")}
+					// id="av7"
 				/>
 				<img
 					src={av8}
 					style={{ width: 100 }}
-					onClick={props.handleAvatar}
-					id="av8"
+					onClick={() => props.handleAvatar("av8")}
+					// id="av8"
 				/>
 				<h2>My favourite list</h2>
 			</div>
