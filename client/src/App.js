@@ -18,6 +18,9 @@ function App() {
 	const [loginErrorMsg, setLoginErrorMsg] = useState("");
 	let [allRegistered, setAllRegistered] = useState([]);
 	const navigate = useNavigate();
+
+	// console.log("This is logged in user id", user.id, user);
+
 	//BACKEND ROUTES
 	//GET all registered users
 	useEffect(() => {
@@ -79,13 +82,26 @@ function App() {
 		Local.removeUserInfo();
 		setUser(null);
 	}
-
+	//Where can we pass path for image????
 	function handleAvatar(avatarId) {
 		console.log("Avatar clicked", avatarId);
+		// Call modifyAvatar() function and pass userId and avatarId as arguments
+		modifyAvatar(user?.id, avatarId);
+	}
+	async function modifyAvatar(userId, avatarId) {
+		console.log("second", userId);
+		// Use the fetch() method to send a PUT request to the backend
+		const avatarData = { id: avatarId };
 
-		// pass info about avatar to back end
-		//save info for this user in backend
-		//avatar is assigned to a user
+		fetch(`/api/register/${userId}`, {
+			// Pass userId as a parameter in the URL
+			method: "PUT",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(avatarData),
+		})
+			.then((response) => response.json())
+			.then((data) => console.log(data))
+			.catch((error) => console.error(error));
 	}
 
 	return (
@@ -106,7 +122,7 @@ function App() {
 					path="/user"
 					element={
 						<PrivateRoute>
-							<User handleAvatar={handleAvatar} />
+							<User handleAvatar={handleAvatar} user={user} />
 						</PrivateRoute>
 					}
 				/>

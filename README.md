@@ -55,6 +55,10 @@ API documentation:
 - Bootstrap
 - bcrypt
 
+## DEMO
+
+![screen-gif](./public/demo.gif)
+
 ## Backend tables
 
 Db name= cinemaholics

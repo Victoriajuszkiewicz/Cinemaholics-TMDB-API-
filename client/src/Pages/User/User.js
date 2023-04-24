@@ -1,4 +1,5 @@
 import React from "react";
+import "./User.css";
 
 import av1 from "../../avatars/av1.png";
 import av2 from "../../avatars/av2.png";
@@ -11,12 +12,17 @@ import av8 from "../../avatars/av8.png";
 
 const User = (props) => {
 	const { id } = props;
+	const { user } = props;
 
 	return (
 		<div>
 			<div className="container">
+				<h2>Hello {user?.name}!</h2>
+			</div>
+			<div className="container">
 				<h2>Choose your avatar</h2>
 				<img
+					className="avatarimg"
 					src={av1}
 					style={{ width: 100 }}
 					// id="av1"

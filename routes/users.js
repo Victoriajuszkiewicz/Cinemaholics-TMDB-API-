@@ -3,11 +3,9 @@ var router = express.Router();
 const db = require("../model/helper");
 const { ensureSameUser } = require("../middleware/guards");
 
-
 // router.get("/", function (req, res, next) {
 //   res.send("HELLO");
 // });
-
 
 /* GET all works, for postman: users/register*/
 router.get("/register", async function (req, res, next) {
@@ -23,7 +21,9 @@ router.get("/register", async function (req, res, next) {
 	}
 });
 //GET USER BY ID
-router.get("/:id", ensureSameUser, async function (req, res, next) {
+//I had ensure same user but it said unauthorised when tried to test with postman
+
+router.get("/register/:id", async function (req, res, next) {
 	let { id } = req.params;
 	let sql = "SELECT * FROM USERS where id = " + id;
 
